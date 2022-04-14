@@ -11,13 +11,16 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minutes) {
+  return minutes * 60;
 }
 // - Execute the function with required parameter
 
+minToSec(50);
+
 /* 2. 
-Create a function named isInRange which validates whether a number n is exclusively within the bounds of lower and upper.
+Create a function named isInRange which validates whether a number n is exclusively 
+within the bounds of lower and upper.
 Return true and false based on that.
 
 The function accepts three parameter lower, upper and the number.
@@ -26,10 +29,12 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower, upper, num) {
+  return num > lower && num < upper;
 }
 // - Execute the function with required parameter
+
+isInRange(1, 20, 9);
 
 /* 2. calculateBMI
 
@@ -49,8 +54,20 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight, height) {
+  let bmi = weight / (height * height);
+  switch (true) {
+    case bmi < 18.56:
+      return "Underweight";
+    case bmi > 18.56 && bmi < 24.9:
+      return "Normal weight";
+    case bmi > 25 && bmi < 29.9:
+      return "Overweight";
+    case bmi > 30:
+      return "Obese";
+    default:
+      return "enter a valid input";
+  }
 }
 
 /* 3. appropiateDrinks
@@ -64,8 +81,19 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  switch (true) {
+    case age < 15:
+      return "drink fruit juice";
+    case age < 18:
+      return "drink soda";
+    case age < 21:
+      return "drink fruit-flavored beer";
+    case age > 21:
+      return "drink throat-piercing vodka";
+    default:
+      return "enter a valid input";
+  }
 }
 
 /* 4. Add two numers or string
@@ -79,8 +107,15 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(value1, value2) {
+  if (typeof value1 == "number" && typeof value2 == "number") {
+    return value1 + value2;
+  } else if
+    (typeof value1 == "string" && typeof value2 == "string") {
+    return value1 + " " + value2;
+  } else {
+    return("Enter valid values");
+  }
 }
 
 // Function Test
